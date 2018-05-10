@@ -1,0 +1,26 @@
+public class Thread extends Object implements Runnable
+
+常用的构造器：
+Thread(Runnable target)
+Thread(Runnable target, String name)
+Thread(String name)
+
+线程的不确定性：
+1.线程是子任务，彼此之间执行顺序不确定
+2.不一定按照start顺序来启动线程
+
+启动线程的两种方法:
+1.继承Thread
+2.接口Runnable
+  所有实现此接口的都可以传入Thread被创建新的线程
+
+共享数据机制：
+  统一创建一个线程，然后分别传入Thread类中达到共享数据的目的
+
+同步机制 线程安全：
+  用synchronized
+
+任何class的构造函数都被main线程(调用他的class所在的线程)调用。
+执行start之后自动调用run，此时被新的线程调用。
+start后再run，第一个由main(调用线程)调用，第二个由新线程调用。（见Run2）
+
